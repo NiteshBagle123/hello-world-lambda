@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: SAM Template for hello world lambda
+
+Parameters:
+  lambdaName:
+    Type: String
+    Description: The name of Lambda Function
+  deploymentEnvironment:
+    Type: String
+    AllowedPattern: \b(dev|QA|staging|prod|devtest)\b
+    Description: The value of deployment environment used in versioning of lambda function
+  customDomainName:
+    Type: String
+
+Resources:
+  HelloWorldLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Ref lambdaName
+      Description: Hello world lambda function.
+      Handler: src/index.handler
+      Runtime: nodejs14.x
+      Timeout: 300
+      Role: arn:aws:iam::075827176107:role/psedevlambda
+      Tags:
+        AppName: hello-world-nitesh
+      Events:
+        HelloWorldApi:
+          Type: Api
+          Properties:
+            Path: /hello-world
+            Method: get
+            RestApiId: !Ref HelloWorldApi
+  HelloWorldApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: !Ref deploymentEnvironment
+  CustomDomainApiMapping:
+    Type: AWS::ApiGateway::BasePathMapping
+    Properties:
+      BasePath: system
+      DomainName: !Ref customDomainName
+      RestApiId: !Ref HelloWorldApi
+      Stage: !Ref HelloWorldApi.Stage
+Outputs:
+  APIDetails:
+    Description: "API Gateway host and stage for endpoint URL"
+    Value: !Sub "https://${customDomainName}/system/v1/egain"
