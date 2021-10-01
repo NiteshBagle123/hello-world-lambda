@@ -1,7 +1,5 @@
-exports.handler = async (event) => {
-    return {
-        statusCode: 200,
-        headers: { 'Content-Type': 'application/json' },
-        body: "Hello World!"
-    };
-}
+exports.handler = async () => ({
+  statusCode: 200,
+  headers: { 'Content-Type': 'application/json' },
+  body: 'Hello World!'
+});
