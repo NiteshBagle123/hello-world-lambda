@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "eslint --fix src/**/*.js",
     "format": "prettier --write src/**/*.{ts,js,tsx}",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "author": "Nitesh Bagle",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
     "husky": "^7.0.2",
+    "jest": "^27.2.4",
     "lint-staged": "^11.1.2",
     "prettier": "2.4.1"
   },
@@ -27,6 +28,7 @@
     "*.{ts,js,tsx}": [
       "eslint --fix",
       "prettier --write",
+      "npm run test",
       "git add"
     ]
   }
