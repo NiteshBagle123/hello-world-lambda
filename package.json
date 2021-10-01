@@ -4,7 +4,7 @@
   "description": "hello world lambda",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --fix src/**/*.js",
+    "eslint": "eslint --fix src/**/*.{ts,js,tsx}",
     "format": "prettier --write src/**/*.{ts,js,tsx}",
     "test": "jest --coverage"
   },
