@@ -23,7 +23,7 @@ This example is boiler plate for starting with serverless world and get basic un
 
 # Installation Steps
 
-1. Go to your terminal and do git clone of this repository by executing command "https://github.com/NiteshBagle123/hello-world-lambda.git" to clone this repository
+1. Go to your terminal and do git clone of this repository by executing command "git clone https://github.com/NiteshBagle123/hello-world-lambda.git" to clone this repository
 2. Move to the root of the cloned repository in your system and do npm install.(this is optional as we triggering lambda from dev url).
 3. Go to your AWS account and select the region where you want to deploy this app(we can provide the same during sam deploy command).
 4. In that region create a S3 bucket. This bucket is for deployment. (If you already have a bucket, you can omit this step).
