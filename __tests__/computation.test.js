@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 const computation = require('../src/computation');
 
 describe('test computation.js', () => {
