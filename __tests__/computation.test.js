@@ -8,7 +8,7 @@ describe('test computation.js', () => {
     });
 
     test('should test sum actual values', () => {
-      expect(computation.sum(1, 1)).toBe(2);
+      expect(computation.sum(1, 1)).toBe(20);
     });
   });
 
