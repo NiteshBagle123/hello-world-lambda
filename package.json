@@ -28,8 +28,7 @@
     "*.{ts,js,tsx}": [
       "eslint --fix",
       "prettier --write",
-      "npm run test",
-      "git add"
+      "npm run test"
     ]
   }
 }
