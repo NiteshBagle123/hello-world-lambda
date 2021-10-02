@@ -14,7 +14,7 @@ describe('test computation.js', () => {
 
   describe('test difference function', () => {
     test('should test difference default parameter values', () => {
-      expect(     computation.difference()).toBe(0);
+      expect(computation.difference()).toBe(0);
     });
 
     test('should test difference actual values', () => {
