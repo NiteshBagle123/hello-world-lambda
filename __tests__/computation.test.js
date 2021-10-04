@@ -5,7 +5,7 @@ const computation = require('../src/computation');
 describe('test computation.js', () => {
   describe('test sum function', () => {
     test('should test sum default parameter values', () => {
-      expect(computation.sum()).toBe(1);
+      expect(computation.sum()).toBe(0);
     });
 
     test('should test sum actual values', () => {
